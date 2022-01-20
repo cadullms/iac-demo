@@ -36,5 +36,14 @@ the plan
 - story: if you want to use a programming language you already know, then you can check out pulumi and terraform cdk as well
 - story: example code slides, one for pulumi, one for tf cdk
 
+auch link: https://gist.github.com/julie-ng/d2136d737f788963650c503852c4a1fe#infrastructure-as-code-iac-comparison
+
 3. Create outline slides
 4. Create demos
+
+Prep:
+- Set Filters in the portal
+- Set Zooming
+- Close all other windows
+- Clean desktop
+- ...
