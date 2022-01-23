@@ -38,6 +38,18 @@ the plan
 
 auch link: https://gist.github.com/julie-ng/d2136d737f788963650c503852c4a1fe#infrastructure-as-code-iac-comparison
 
+gespräch torsten:
+  cloud: mandatory
+  pipeline: selbe?
+  3rd factor?
+  tellerrand: wo geht es hin?
+  gerade auch: imperativ pulumi tf cdk
+  vergleich? crossplane, service operators
+  missverständnis mit abstraktionsebene
+  crossplane/service operator als abstraktion rein
+  still an evolving story
+  versuch einer entscheidungsmatrix
+
 3. Create outline slides
 4. Create demos
 
