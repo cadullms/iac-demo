@@ -9,4 +9,10 @@ steps:
   inputs:
     command: 'publish'
     publishWebProjects: true
+    arguments: '--output $(Build.ArtifactStagingDirectory)'
     workingDirectory: '5/app'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'binaries'
+    publishLocation: 'Container'
