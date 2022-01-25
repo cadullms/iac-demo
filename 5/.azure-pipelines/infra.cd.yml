@@ -13,9 +13,9 @@ stages:
           deploy:
            steps:
            - pwsh: |
-             cd ..
-             pwd
-             tree
+               cd ..
+               pwd
+               tree
            - checkout: self
            - task: AzureCLI@2
              inputs:
