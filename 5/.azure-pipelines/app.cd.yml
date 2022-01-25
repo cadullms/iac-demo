@@ -9,6 +9,22 @@ resources:
       source: app.ci
 
 stages:
+  - stage: dev
+    jobs:
+    - deployment: dev
+      environment: dev
+      strategy:
+        runOnce:
+          deploy:
+           steps:
+           - task: AzureRmWebAppDeployment@4
+             inputs:
+               ConnectionType: 'AzureRM'
+               azureSubscription: 'cadull-internal-consumption(9fe738f4-de59-4073-a7ac-c66fdef4fffa)'
+               appType: 'webApp'
+               WebAppName: 'cadulldemo5-dev'
+               packageForLinux: '$(PIPELINE.WORKSPACE)/ci/binaries/**/*.zip'
+
   - stage: prod
     jobs:
     - deployment: prod
