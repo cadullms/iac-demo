@@ -34,6 +34,7 @@ resource webApp 'Microsoft.Web/sites@2020-12-01' = {
     properties: {
       connectionString: '@Microsoft.KeyVault(SecretUri=${keyVault::connectionStringSecret.properties.secretUri})'
       environmentLabel: environmentLabel
+      WEBSITE_RUN_FROM_PACKAGE: '1'
     }
   }
 
