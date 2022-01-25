@@ -5,6 +5,7 @@ param sqlServerName string
 @secure()
 param sqlAdminPassword string 
 param sqlAdminUsername string = 'azureuser'
+param environmentLabel string = 'n/a'
 
 resource plan 'Microsoft.Web/serverfarms@2020-12-01' = {
   name: planName
@@ -32,6 +33,7 @@ resource webApp 'Microsoft.Web/sites@2020-12-01' = {
     name: 'appsettings'
     properties: {
       connectionString: '@Microsoft.KeyVault(SecretUri=${keyVault::connectionStringSecret.properties.secretUri})'
+      environmentLabel: environmentLabel
     }
   }
 

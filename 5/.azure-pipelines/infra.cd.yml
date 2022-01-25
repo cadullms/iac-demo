@@ -19,7 +19,7 @@ stages:
                scriptType: 'pscore'
                scriptLocation: 'scriptPath'
                scriptPath: '5/infra/create-infra.ps1'
-               arguments: '-namePrefix "cadulldemo5-dev"'
+               arguments: '-namePrefix "cadulldemo5-dev" -environmentLabel "azure-dev"'
 
   - stage: prod
     jobs:
@@ -36,4 +36,4 @@ stages:
                scriptType: 'pscore'
                scriptLocation: 'scriptPath'
                scriptPath: '5/infra/create-infra.ps1'
-               arguments: '-namePrefix "cadulldemo5"'
+               arguments: '-namePrefix "cadulldemo5" -environmentLabel "azure-prod"'
