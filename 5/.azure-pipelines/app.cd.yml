@@ -9,9 +9,10 @@ resources:
       source: app.ci
 
 stages:
-  - stage: dev
+  - stage: prod
     jobs:
-    - deployment: dev
+    - deployment: prod
+      environment: prod
       strategy:
         runOnce:
           deploy:
