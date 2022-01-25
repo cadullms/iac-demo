@@ -7,6 +7,7 @@ resources:
   pipelines:
     - pipeline: ci
       source: app.ci
+      trigger: true
 
 stages:
   - stage: dev
