@@ -27,4 +27,4 @@ stages:
                azureSubscription: 'cadull-internal-consumption(9fe738f4-de59-4073-a7ac-c66fdef4fffa)'
                appType: 'webApp'
                WebAppName: 'cadulldemo4'
-               packageForLinux: '$(PIPELINE.WORKSPACE)/app.ci/binaries/**/*.zip'
+               packageForLinux: '$(PIPELINE.WORKSPACE)/ci/binaries/**/*.zip'
