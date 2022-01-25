@@ -12,10 +12,10 @@ stages:
         runOnce:
           deploy:
            steps:
-           - task: AzureCLITODO
+           - task: AzureCLI@2
              inputs:
-               ConnectionType: 'AzureRM'
                azureSubscription: 'cadull-internal-consumption(9fe738f4-de59-4073-a7ac-c66fdef4fffa)'
-               appType: 'webApp'
-               WebAppName: 'cadulldemo5'
-               packageForLinux: '$(PIPELINE.WORKSPACE)/ci/binaries/**/*.zip'
+               scriptType: 'pscore'
+               scriptLocation: 'scriptPath'
+               scriptPath: '5/infra/create-infra.ps1'
+               arguments: '-namePrefix "cadulldemo5"'
