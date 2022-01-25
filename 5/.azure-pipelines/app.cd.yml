@@ -1,0 +1,27 @@
+trigger: none
+
+pool:
+  vmImage: ubuntu-latest
+
+resources:
+  pipelines:
+    - pipeline: ci
+      source: app.ci
+
+stages:
+  - stage: dev
+    jobs:
+    - deployment: dev
+      strategy:
+        runOnce:
+          deploy:
+           steps:
+           - pwsh: |
+               tree
+           - task: AzureRmWebAppDeployment@4
+             inputs:
+               ConnectionType: 'AzureRM'
+               azureSubscription: 'cadull-internal-consumption(9fe738f4-de59-4073-a7ac-c66fdef4fffa)'
+               appType: 'webApp'
+               WebAppName: 'cadulldemo4'
+               packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
